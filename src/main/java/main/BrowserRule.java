@@ -17,15 +17,15 @@ public class BrowserRule extends ExternalResource {
 
     @Override
     protected void before() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "C:/WebDriver/bin/chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "C:/WebDriver/bin/geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/main/resources/drivers/geckodriver.exe");
 
         String br = System.getenv("browser");
 
         if ("chrome".equals(br)) {
             driver = new ChromeDriver();
         } else if ("ff".equals(br)) {
-            WebDriver driver = new FirefoxDriver();
+            driver = new FirefoxDriver();
         }
 
         driver = new ChromeDriver();
